@@ -15,6 +15,7 @@
         --muted: #a8b5ae;
         --line: #35443d;
         --accent: #75cba8;
+        --accent-hover: #58b78f;
         --paper: #121815;
         --soft: #202a25;
         --surface: #1a231f;
@@ -76,8 +77,8 @@
         height: 32px;
         display: grid;
         place-items: center;
-        background: var(--ink);
-        color: white;
+        background: var(--accent);
+        color: var(--paper);
         font-size: 24px;
         font-weight: 400;
       }
@@ -131,8 +132,8 @@
         align-items: center;
         gap: 35px;
         padding: 13px 21px;
-        background: var(--ink);
-        color: #fff;
+        background: var(--accent);
+        color: var(--paper);
         border-radius: 4px;
         text-decoration: none;
         font-size: 13px;
@@ -140,7 +141,7 @@
         min-height: 48px;
       }
       .button:hover {
-        background: var(--accent);
+        background: var(--accent-hover);
       }
       .hero-art {
         background: var(--soft);
@@ -302,9 +303,9 @@
         opacity: 0.6;
       }
       .filter.active {
-        background: var(--ink);
-        border-color: var(--ink);
-        color: white;
+        background: var(--accent);
+        border-color: var(--accent);
+        color: var(--paper);
       }
       .project-grid {
         display: grid;
