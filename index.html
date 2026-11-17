@@ -1,0 +1,1076 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta
+      name="description"
+      content="Portfolio de Jordi Arnau: desarrollo web, ciberseguridad y prácticas de laboratorio."
+    />
+    <title>Jordi Arnau | Desarrollo web y ciberseguridad</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --ink: #202a29;
+        --muted: #626b68;
+        --line: #dce2de;
+        --accent: #216c5c;
+        --paper: #fcfcfa;
+        --soft: #eef3ef;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 28px;
+      }
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 16px;
+        line-height: 1.65;
+      }
+      a {
+        color: inherit;
+      }
+      button {
+        font: inherit;
+      }
+      .wrap {
+        width: min(1120px, calc(100% - 80px));
+        margin: auto;
+      }
+      .draft {
+        background: #e9eee9;
+        color: #53615a;
+        padding: 9px 20px;
+        text-align: center;
+        font-size: 12px;
+        letter-spacing: 0.025em;
+      }
+      .draft span {
+        margin: 0 8px;
+      }
+      .header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 28px;
+        padding-bottom: 26px;
+        border-bottom: 1px solid var(--line);
+      }
+      .brand {
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 17px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .brand-mark {
+        width: 29px;
+        height: 32px;
+        display: grid;
+        place-items: center;
+        background: var(--ink);
+        color: white;
+        font-size: 24px;
+        font-weight: 400;
+      }
+      .header nav {
+        display: flex;
+        gap: 34px;
+        font-size: 14px;
+      }
+      .header nav a {
+        text-decoration: none;
+        color: var(--muted);
+      }
+      .header nav a:hover {
+        color: var(--accent);
+      }
+      .hero {
+        padding-top: 82px;
+        padding-bottom: 88px;
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 80px;
+        align-items: center;
+      }
+      .eyebrow {
+        text-transform: uppercase;
+        letter-spacing: 0.15em;
+        font-size: 11px;
+        font-weight: 600;
+        color: var(--accent);
+        margin: 0 0 22px;
+      }
+      h1 {
+        font-size: clamp(52px, 6.2vw, 78px);
+        line-height: 1.06;
+        font-weight: 500;
+        letter-spacing: -0.065em;
+        margin: 0 0 25px;
+      }
+      h1 span {
+        color: var(--accent);
+      }
+      .lead {
+        font-size: 17px;
+        color: var(--muted);
+        max-width: 455px;
+        line-height: 1.8;
+        margin: 0 0 30px;
+      }
+      .button {
+        display: inline-flex;
+        align-items: center;
+        gap: 35px;
+        padding: 13px 21px;
+        background: var(--ink);
+        color: #fff;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        min-height: 48px;
+      }
+      .button:hover {
+        background: var(--accent);
+      }
+      .hero-art {
+        background: var(--soft);
+        padding: 24px 28px;
+        border: 1px solid #dce6de;
+        border-radius: 8px;
+        min-width: 0;
+      }
+      .art-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: #58675f;
+        font-size: 11px;
+        letter-spacing: 0.05em;
+      }
+      .dot {
+        background: var(--accent);
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+      }
+      .art-orbit {
+        height: 290px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .orbit-line {
+        position: absolute;
+        width: 248px;
+        height: 248px;
+        border: 1px solid #d3dfd6;
+        border-radius: 50%;
+        transform: rotate(-30deg);
+      }
+      .orbit-line:after {
+        content: "";
+        position: absolute;
+        inset: 20px;
+        border: 1px dashed #d3dfd6;
+        border-radius: 50%;
+      }
+      .node {
+        position: relative;
+        z-index: 1;
+        background: var(--paper);
+        border: 1px solid #cfdad2;
+        border-radius: 7px;
+        padding: 23px 12px;
+        text-align: center;
+        width: 150px;
+        box-shadow: 0 7px 15px #293b2f06;
+      }
+      .web-node {
+        transform: translateY(-26px);
+      }
+      .sec-node {
+        transform: translateY(26px);
+      }
+      .node strong {
+        display: block;
+        font-size: 14px;
+        letter-spacing: -0.025em;
+      }
+      .node small {
+        display: block;
+        font-size: 9px;
+        color: var(--muted);
+        margin-top: 6px;
+        white-space: nowrap;
+      }
+      .node-icon {
+        display: block;
+        font-family: monospace;
+        font-size: 29px;
+        line-height: 39px;
+        color: var(--accent);
+        margin-bottom: 12px;
+      }
+      .node svg {
+        width: 29px;
+        height: 39px;
+        fill: none;
+        stroke: var(--accent);
+        stroke-width: 1.6;
+        margin-bottom: 6px;
+      }
+      .connector {
+        display: flex;
+        gap: 3px;
+        z-index: 2;
+      }
+      .connector span {
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background: #90a799;
+      }
+      .art-foot {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        font-size: 9px;
+        letter-spacing: 0.12em;
+        color: #6c7b70;
+      }
+      .art-foot i {
+        height: 1px;
+        background: #cfdad2;
+        flex: 1;
+      }
+      .projects {
+        padding-top: 0;
+        padding-bottom: 82px;
+      }
+      .section-head {
+        display: flex;
+        align-items: flex-end;
+        justify-content: space-between;
+        gap: 25px;
+      }
+      .section-head .eyebrow {
+        margin-bottom: 10px;
+      }
+      h2 {
+        font-size: 35px;
+        line-height: 1.25;
+        letter-spacing: -0.045em;
+        font-weight: 500;
+        margin: 0;
+      }
+      .section-head > p {
+        font-size: 13px;
+        color: var(--muted);
+        margin: 0 0 2px;
+      }
+      .filters {
+        display: flex;
+        gap: 8px;
+        margin: 28px 0 23px;
+        flex-wrap: wrap;
+      }
+      .filter {
+        border: 1px solid var(--line);
+        padding: 9px 15px;
+        font-size: 12px;
+        border-radius: 4px;
+        color: var(--muted);
+        background: transparent;
+        cursor: pointer;
+        min-height: 44px;
+      }
+      .filter span {
+        font-size: 10px;
+        margin-left: 7px;
+        opacity: 0.6;
+      }
+      .filter.active {
+        background: var(--ink);
+        border-color: var(--ink);
+        color: white;
+      }
+      .project-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 18px;
+      }
+      .project {
+        border: 1px solid var(--line);
+        border-top: 2px solid #b4c7b9;
+        padding: 23px 23px 0;
+        border-radius: 3px;
+        display: flex;
+        flex-direction: column;
+        background: #fff;
+        min-width: 0;
+      }
+      .project[hidden] {
+        display: none;
+      }
+      .security-project {
+        border-top-color: var(--accent);
+      }
+      .project-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 6px;
+        margin-bottom: 35px;
+      }
+      .project-num {
+        font-family: monospace;
+        font-size: 12px;
+        color: #8a958f;
+      }
+      .category {
+        font-size: 10px;
+        color: #557062;
+      }
+      .project h3 {
+        font-size: 23px;
+        line-height: 1.25;
+        letter-spacing: -0.04em;
+        margin: 0 0 15px;
+        font-weight: 500;
+      }
+      .project > p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.85;
+        margin: 0 0 20px;
+      }
+      .tags {
+        display: flex;
+        gap: 5px;
+        flex-wrap: wrap;
+        margin-top: auto;
+        margin-bottom: 24px;
+      }
+      .tags span {
+        font-size: 9px;
+        background: #f0f3ef;
+        padding: 4px 7px;
+        color: #5c6d61;
+        border-radius: 2px;
+      }
+      .project details {
+        border-top: 1px solid var(--line);
+        margin: 0 -23px;
+        padding: 0 23px;
+      }
+      .project summary {
+        list-style: none;
+        cursor: pointer;
+        min-height: 55px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 11px;
+        font-weight: 600;
+      }
+      .project summary::-webkit-details-marker {
+        display: none;
+      }
+      .project summary span {
+        font-size: 18px;
+        font-weight: 400;
+      }
+      .project details[open] summary span {
+        transform: rotate(45deg);
+      }
+      .detail-body {
+        font-size: 12px;
+        color: var(--muted);
+        padding-bottom: 16px;
+      }
+      .detail-body p {
+        margin: 0 0 12px;
+      }
+      .detail-body .note {
+        font-size: 11px;
+        border-left: 2px solid #c4d8c9;
+        padding-left: 10px;
+      }
+      .learning {
+        padding: 64px 0;
+        background: #eef2ed;
+        border-top: 1px solid #e0e5df;
+        border-bottom: 1px solid #e0e5df;
+      }
+      .learning-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.15fr;
+        gap: 80px;
+      }
+      .learning .eyebrow {
+        margin-bottom: 18px;
+      }
+      .learning h2 {
+        font-size: 31px;
+      }
+      .section-intro {
+        max-width: 335px;
+        font-size: 13px;
+        color: var(--muted);
+        margin-top: 24px;
+      }
+      .learning-list > div {
+        padding: 18px 0;
+        display: grid;
+        grid-template-columns: 22px 1fr auto;
+        gap: 15px;
+        border-bottom: 1px solid #d4ded4;
+      }
+      .learning-list > div:first-child {
+        padding-top: 0;
+      }
+      .learning-list > div > span {
+        font-size: 10px;
+        font-family: monospace;
+        color: #7a8a7c;
+        margin-top: 3px;
+      }
+      .learning-list h3 {
+        font-size: 15px;
+        font-weight: 600;
+        margin: 0 0 5px;
+        line-height: 1.4;
+      }
+      .learning-list p {
+        font-size: 12px;
+        color: var(--muted);
+        margin: 0;
+      }
+      .learning-list small {
+        font-size: 9px;
+        color: var(--accent);
+        white-space: nowrap;
+        padding-top: 4px;
+      }
+      .learning-list .pending {
+        font-size: 10px;
+        margin-top: 18px;
+        line-height: 1.7;
+      }
+      .profile {
+        padding-top: 76px;
+        padding-bottom: 78px;
+      }
+      .profile-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.15fr;
+        gap: 80px;
+      }
+      .profile-grid > div > p:first-child {
+        margin-top: 0;
+        font-size: 16px;
+        color: #45544b;
+        line-height: 1.8;
+      }
+      .privacy {
+        font-size: 12px;
+        color: var(--muted);
+        border-left: 2px solid #c7d4ca;
+        padding-left: 15px;
+        margin-top: 22px;
+      }
+      .footer {
+        border-top: 1px solid var(--line);
+        padding-top: 23px;
+        padding-bottom: 30px;
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        font-size: 10px;
+        color: var(--muted);
+      }
+      .footer a {
+        text-decoration: none;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+      }
+      :focus-visible {
+        outline: 3px solid #62a68d;
+        outline-offset: 4px;
+      }
+      @media (max-width: 900px) {
+        .wrap {
+          width: calc(100% - 48px);
+        }
+        .hero {
+          gap: 35px;
+          padding-top: 55px;
+          padding-bottom: 60px;
+        }
+        .hero-art {
+          padding: 20px 14px;
+        }
+        .node {
+          width: 125px;
+          padding: 20px 8px;
+        }
+        .node small {
+          font-size: 8px;
+        }
+        .art-orbit {
+          gap: 5px;
+        }
+        .project-grid {
+          gap: 12px;
+        }
+        .project {
+          padding-left: 17px;
+          padding-right: 17px;
+        }
+        .project details {
+          margin-left: -17px;
+          margin-right: -17px;
+          padding: 0 17px;
+        }
+        .learning-grid,
+        .profile-grid {
+          gap: 40px;
+        }
+        .learning-list > div {
+          grid-template-columns: 18px 1fr;
+        }
+        .learning-list small {
+          grid-column: 2;
+          padding-top: 0;
+        }
+      }
+      @media (max-width: 660px) {
+        .wrap {
+          width: calc(100% - 40px);
+        }
+        .draft {
+          font-size: 10px;
+          padding: 9px 10px;
+          line-height: 1.5;
+        }
+        .draft span {
+          margin: 0 3px;
+        }
+        .header {
+          padding-top: 20px;
+          padding-bottom: 20px;
+          gap: 15px;
+          flex-wrap: wrap;
+        }
+        .brand {
+          font-size: 14px;
+        }
+        .brand-mark {
+          width: 24px;
+          height: 27px;
+          font-size: 21px;
+        }
+        .header nav {
+          gap: 20px;
+          font-size: 12px;
+          width: 100%;
+          justify-content: space-between;
+          padding-top: 5px;
+        }
+        .hero {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+          gap: 36px;
+          padding-top: 43px;
+          padding-bottom: 48px;
+        }
+        .eyebrow {
+          font-size: 10px;
+          letter-spacing: 0.12em;
+          margin-bottom: 20px;
+        }
+        h1 {
+          font-size: 62px;
+        }
+        .lead {
+          font-size: 15px;
+          line-height: 1.85;
+          max-width: 420px;
+        }
+        .button {
+          font-size: 12px;
+        }
+        .hero-art {
+          padding: 20px 22px;
+        }
+        .art-orbit {
+          height: 245px;
+          gap: 9px;
+        }
+        .orbit-line {
+          width: 214px;
+          height: 214px;
+        }
+        .node {
+          width: 128px;
+          padding: 20px 8px;
+        }
+        .node small {
+          font-size: 8px;
+        }
+        .art-top {
+          font-size: 10px;
+        }
+        .art-foot {
+          font-size: 8px;
+        }
+        .section-head {
+          display: block;
+        }
+        .section-head > p {
+          margin-top: 15px;
+          font-size: 12px;
+        }
+        .desktop-only {
+          display: none;
+        }
+        h2 {
+          font-size: 30px;
+        }
+        .filters {
+          gap: 6px;
+          margin-top: 23px;
+        }
+        .filter {
+          font-size: 10px;
+          padding: 9px 10px;
+        }
+        .filter span {
+          margin-left: 3px;
+        }
+        .project-grid {
+          grid-template-columns: 1fr;
+          gap: 18px;
+        }
+        .project {
+          padding: 23px 24px 0;
+        }
+        .project-top {
+          margin-bottom: 28px;
+        }
+        .project h3 {
+          font-size: 25px;
+        }
+        .project > p {
+          font-size: 14px;
+        }
+        .tags span {
+          font-size: 10px;
+        }
+        .project details {
+          margin: 0 -24px;
+          padding: 0 24px;
+        }
+        .project summary {
+          font-size: 12px;
+        }
+        .detail-body {
+          font-size: 13px;
+        }
+        .category {
+          font-size: 11px;
+        }
+        .projects {
+          padding-bottom: 48px;
+        }
+        .learning {
+          padding: 42px 0;
+        }
+        .learning-grid,
+        .profile-grid {
+          grid-template-columns: 1fr;
+          gap: 25px;
+        }
+        .learning h2 {
+          font-size: 29px;
+        }
+        .section-intro {
+          margin-top: 18px;
+          max-width: none;
+        }
+        .learning-list > div {
+          grid-template-columns: 18px 1fr auto;
+          gap: 12px;
+          padding: 17px 0;
+        }
+        .learning-list small {
+          grid-column: auto;
+          font-size: 8px;
+          padding-top: 3px;
+        }
+        .learning-list h3 {
+          font-size: 14px;
+        }
+        .learning-list p {
+          font-size: 12px;
+        }
+        .profile {
+          padding-top: 46px;
+          padding-bottom: 44px;
+        }
+        .profile-grid > div > p:first-child {
+          font-size: 15px;
+        }
+        .footer {
+          flex-direction: column;
+          gap: 8px;
+          font-size: 10px;
+        }
+        .footer a {
+          padding: 8px 0;
+          min-height: 44px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+      @media (max-width: 350px) {
+        h1 {
+          font-size: 55px;
+        }
+        .hero-art {
+          padding: 16px;
+        }
+        .node {
+          width: 108px;
+        }
+        .node small {
+          font-size: 7px;
+        }
+        .connector {
+          gap: 2px;
+        }
+        .learning-list > div {
+          grid-template-columns: 16px 1fr;
+        }
+        .learning-list small {
+          grid-column: 2;
+        }
+        .filter {
+          padding: 9px 8px;
+        }
+      }
+      .project-grid {
+        align-items: start;
+      }
+      .project {
+        min-height: 340px;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header wrap">
+      <a class="brand" href="#inicio" aria-label="Volver al inicio"
+        ><span class="brand-mark">/</span> Jordi Arnau</a
+      >
+      <nav aria-label="Principal">
+        <a href="#proyectos">Proyectos</a><a href="#formacion">Formación</a
+        ><a href="#perfil">Perfil</a>
+      </nav>
+    </header>
+    <main id="inicio">
+      <section class="hero wrap" aria-labelledby="titulo">
+        <div class="hero-copy">
+          <p class="eyebrow">Desarrollo web + ciberseguridad</p>
+          <h1 id="titulo">
+            Construir.<br />Entender.<br /><span>Proteger.</span>
+          </h1>
+          <p class="lead">
+            Un portfolio entre aplicaciones web y seguridad informática.
+            Proyectos personales, prácticas de laboratorio y aprendizaje en
+            curso.
+          </p>
+          <a class="button" href="#proyectos"
+            >Explorar proyectos <span aria-hidden="true">↓</span></a
+          >
+        </div>
+        <div
+          class="hero-art"
+          aria-label="Ilustración conceptual de las dos áreas del portfolio"
+        >
+          <div class="art-top">
+            <span>Dos áreas, un enfoque</span><span class="dot"></span>
+          </div>
+          <div class="art-orbit">
+            <div class="orbit-line"></div>
+            <div class="node web-node">
+              <span class="node-icon" aria-hidden="true">&lt;/&gt;</span
+              ><strong>Desarrollo</strong
+              ><small>Crear herramientas útiles</small>
+            </div>
+            <div class="connector"><span></span><span></span><span></span></div>
+            <div class="node sec-node">
+              <svg aria-hidden="true" viewBox="0 0 32 36">
+                <path d="M16 2 29 7v10c0 8-7 13-13 17C10 30 3 25 3 17V7Z" />
+                <path d="m10 17 4 4 8-9" /></svg
+              ><strong>Seguridad</strong
+              ><small>Comprender cómo funcionan</small>
+            </div>
+          </div>
+          <div class="art-foot">
+            <span>APLICACIONES</span><i></i><span>SISTEMAS</span>
+          </div>
+        </div>
+      </section>
+      <section
+        class="projects wrap"
+        id="proyectos"
+        aria-labelledby="proyectos-title"
+      >
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">01 / Trabajo seleccionado</p>
+            <h2 id="proyectos-title">Del concepto a la práctica.</h2>
+          </div>
+          <p>
+            Aplicaciones personales y un laboratorio<br class="desktop-only" />
+            documentado durante la formación.
+          </p>
+        </div>
+        <div class="filters" role="group" aria-label="Filtrar proyectos">
+          <button class="filter active" data-filter="all" aria-pressed="true">
+            Todos <span>3</span></button
+          ><button class="filter" data-filter="web" aria-pressed="false">
+            Desarrollo web <span>2</span></button
+          ><button class="filter" data-filter="security" aria-pressed="false">
+            Ciberseguridad <span>1</span>
+          </button>
+        </div>
+        <p class="sr-only" id="results" aria-live="polite">3 proyectos</p>
+        <div class="project-grid">
+          <article class="project" data-category="web">
+            <div class="project-top">
+              <span class="project-num">01</span
+              ><span class="category">Aplicación web</span>
+            </div>
+            <h3>StudyFlow</h3>
+            <p>
+              Un espacio para organizar horario, entregas y apuntes, con
+              temporizador Pomodoro y personalización de la interfaz.
+            </p>
+            <div class="tags">
+              <span>Organización</span><span>Interfaz adaptable</span
+              ><span>PWA</span>
+            </div>
+            <details>
+              <summary>
+                Qué reúne el proyecto <span aria-hidden="true">+</span>
+              </summary>
+              <div class="detail-body">
+                <p>
+                  Acceso con cuenta, navegación lateral, temas y colores
+                  configurables. Una aplicación pensada para reunir las tareas
+                  de estudio en una sola interfaz.
+                </p>
+                <p class="note">
+                  Proyecto personal con desarrollo asistido por IA. No se
+                  presenta como trabajo de clase de DAW.
+                </p>
+              </div>
+            </details>
+          </article>
+          <article class="project" data-category="web">
+            <div class="project-top">
+              <span class="project-num">02</span
+              ><span class="category">Web de divulgación</span>
+            </div>
+            <h3>Modo Incógnito</h3>
+            <p>
+              Una web en castellano para reconocer señales habituales de estafa,
+              con guías, un cuestionario y un comprobador de mensajes.
+            </p>
+            <div class="tags">
+              <span>Prevención</span><span>Web estática</span
+              ><span>Privacidad</span>
+            </div>
+            <details>
+              <summary>
+                Qué reúne el proyecto <span aria-hidden="true">+</span>
+              </summary>
+              <div class="detail-body">
+                <p>
+                  El comprobador identifica señales de alerta de forma local. No
+                  sustituye una verificación de identidad ni garantiza que un
+                  mensaje sea seguro.
+                </p>
+                <p class="note">
+                  Proyecto personal con desarrollo asistido por IA. Enlaces y
+                  autoría pendientes de revisión antes de publicar.
+                </p>
+              </div>
+            </details>
+          </article>
+          <article class="project security-project" data-category="security">
+            <div class="project-top">
+              <span class="project-num">03</span
+              ><span class="category">Práctica de laboratorio</span>
+            </div>
+            <h3>Laboratorio de auditoría web</h3>
+            <p>
+              Preparación de un entorno virtual con Kali Linux y herramientas
+              para estudiar el tráfico web en un laboratorio controlado.
+            </p>
+            <div class="tags">
+              <span>Kali Linux</span><span>VirtualBox</span><span>Caido</span>
+            </div>
+            <details>
+              <summary>
+                Ver el caso de estudio <span aria-hidden="true">+</span>
+              </summary>
+              <div class="detail-body">
+                <p>
+                  La memoria entregada incluye capturas de configuración de la
+                  máquina virtual y su red, instalación de herramientas y
+                  preparación del proxy web.
+                </p>
+                <p>
+                  El objetivo es separar las pruebas del sistema principal y
+                  comprender el recorrido de las peticiones HTTP/HTTPS.
+                </p>
+                <p class="note">
+                  Práctica formativa, no una auditoría profesional. Solo en
+                  entornos propios o autorizados. La memoria original no se
+                  publica.
+                </p>
+              </div>
+            </details>
+          </article>
+        </div>
+      </section>
+      <section class="learning" id="formacion">
+        <div class="wrap learning-grid">
+          <div>
+            <p class="eyebrow">02 / Formación</p>
+            <h2>Aprender cómo funciona.<br />Y cómo se protege.</h2>
+            <p class="section-intro">
+              Ciberseguridad en curso. Sin porcentajes de dominio ni
+              certificaciones que no estén acreditadas.
+            </p>
+          </div>
+          <div class="learning-list">
+            <div>
+              <span>01</span>
+              <div>
+                <h3>Redes y sistemas</h3>
+                <p>
+                  Planes de seguridad, autenticación, credenciales y fundamentos
+                  de redes.
+                </p>
+              </div>
+              <small>En formación</small>
+            </div>
+            <div>
+              <span>02</span>
+              <div>
+                <h3>Análisis forense</h3>
+                <p>
+                  Evidencias digitales, cadena de custodia y análisis de
+                  memoria.
+                </p>
+              </div>
+              <small>En formación</small>
+            </div>
+            <div>
+              <span>03</span>
+              <div>
+                <h3>Seguridad de aplicaciones</h3>
+                <p>Puesta en producción segura, hacking ético y normativa.</p>
+              </div>
+              <small>En formación</small>
+            </div>
+            <p class="pending">
+              DAW: pendiente de incorporar los trabajos y la formación que se
+              confirmen.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="profile wrap" id="perfil">
+        <p class="eyebrow">03 / Perfil</p>
+        <div class="profile-grid">
+          <h2>El trabajo,<br />en primer plano.</h2>
+          <div>
+            <p>
+              Aplicaciones web y ciberseguridad son el punto de encuentro de
+              este portfolio: crear herramientas, entender los sistemas y
+              documentar lo aprendido.
+            </p>
+            <p>
+              <a
+                class="profile-link"
+                href="https://github.com/jordi05"
+                target="_blank"
+                rel="noopener noreferrer"
+                >GitHub / jordi05 ↗</a
+              >
+            </p>
+            <p class="privacy">
+              Sin fotografía, correo ni teléfono. Contacto a través de GitHub.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="wrap footer">
+      <span>Jordi Arnau · Desarrollo web y ciberseguridad</span><span>2026</span
+      ><a href="#inicio">Volver arriba ↑</a>
+    </footer>
+    <script>
+      const filters = Array.from(document.querySelectorAll("[data-filter]"));
+      const projects = Array.from(document.querySelectorAll("[data-category]"));
+      filters.forEach((button) =>
+        button.addEventListener("click", () => {
+          const category = button.dataset.filter;
+          filters.forEach((item) => {
+            const selected = item === button;
+            item.classList.toggle("active", selected);
+            item.setAttribute("aria-pressed", String(selected));
+          });
+          let count = 0;
+          projects.forEach((project) => {
+            const show =
+              category === "all" || project.dataset.category === category;
+            project.hidden = !show;
+            if (show) count += 1;
+          });
+          document.getElementById("results").textContent =
+            `${count} ${count === 1 ? "proyecto" : "proyectos"}`;
+        }),
+      );
+    </script>
+  </body>
+</html>
