@@ -10,13 +10,14 @@
     <title>Jordi Arnau | Desarrollo web y ciberseguridad</title>
     <style>
       :root {
-        color-scheme: light;
-        --ink: #202a29;
-        --muted: #626b68;
-        --line: #dce2de;
-        --accent: #216c5c;
-        --paper: #fcfcfa;
-        --soft: #eef3ef;
+        color-scheme: dark;
+        --ink: #eef3f0;
+        --muted: #a8b5ae;
+        --line: #35443d;
+        --accent: #75cba8;
+        --paper: #121815;
+        --soft: #202a25;
+        --surface: #1a231f;
       }
       * {
         box-sizing: border-box;
@@ -44,8 +45,8 @@
         margin: auto;
       }
       .draft {
-        background: #e9eee9;
-        color: #53615a;
+        background: var(--soft);
+        color: var(--muted);
         padding: 9px 20px;
         text-align: center;
         font-size: 12px;
@@ -144,7 +145,7 @@
       .hero-art {
         background: var(--soft);
         padding: 24px 28px;
-        border: 1px solid #dce6de;
+        border: 1px solid var(--line);
         border-radius: 8px;
         min-width: 0;
       }
@@ -152,7 +153,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        color: #58675f;
+        color: var(--muted);
         font-size: 11px;
         letter-spacing: 0.05em;
       }
@@ -174,7 +175,7 @@
         position: absolute;
         width: 248px;
         height: 248px;
-        border: 1px solid #d3dfd6;
+        border: 1px solid var(--line);
         border-radius: 50%;
         transform: rotate(-30deg);
       }
@@ -182,19 +183,19 @@
         content: "";
         position: absolute;
         inset: 20px;
-        border: 1px dashed #d3dfd6;
+        border: 1px dashed var(--line);
         border-radius: 50%;
       }
       .node {
         position: relative;
         z-index: 1;
         background: var(--paper);
-        border: 1px solid #cfdad2;
+        border: 1px solid var(--line);
         border-radius: 7px;
         padding: 23px 12px;
         text-align: center;
         width: 150px;
-        box-shadow: 0 7px 15px #293b2f06;
+        box-shadow: 0 8px 20px #00000030;
       }
       .web-node {
         transform: translateY(-26px);
@@ -239,7 +240,7 @@
         width: 3px;
         height: 3px;
         border-radius: 50%;
-        background: #90a799;
+        background: var(--accent);
       }
       .art-foot {
         display: flex;
@@ -247,11 +248,11 @@
         gap: 14px;
         font-size: 9px;
         letter-spacing: 0.12em;
-        color: #6c7b70;
+        color: var(--muted);
       }
       .art-foot i {
         height: 1px;
-        background: #cfdad2;
+        background: var(--line);
         flex: 1;
       }
       .projects {
@@ -312,12 +313,12 @@
       }
       .project {
         border: 1px solid var(--line);
-        border-top: 2px solid #b4c7b9;
+        border-top: 2px solid var(--line);
         padding: 23px 23px 0;
         border-radius: 3px;
         display: flex;
         flex-direction: column;
-        background: #fff;
+        background: var(--surface);
         min-width: 0;
       }
       .project[hidden] {
@@ -336,11 +337,11 @@
       .project-num {
         font-family: monospace;
         font-size: 12px;
-        color: #8a958f;
+        color: var(--muted);
       }
       .category {
         font-size: 10px;
-        color: #557062;
+        color: var(--accent);
       }
       .project h3 {
         font-size: 23px;
@@ -364,9 +365,9 @@
       }
       .tags span {
         font-size: 9px;
-        background: #f0f3ef;
+        background: var(--soft);
         padding: 4px 7px;
-        color: #5c6d61;
+        color: var(--muted);
         border-radius: 2px;
       }
       .project details {
@@ -405,14 +406,14 @@
       }
       .detail-body .note {
         font-size: 11px;
-        border-left: 2px solid #c4d8c9;
+        border-left: 2px solid var(--accent);
         padding-left: 10px;
       }
       .learning {
         padding: 64px 0;
-        background: #eef2ed;
-        border-top: 1px solid #e0e5df;
-        border-bottom: 1px solid #e0e5df;
+        background: var(--surface);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
       }
       .learning-grid {
         display: grid;
@@ -436,7 +437,7 @@
         display: grid;
         grid-template-columns: 22px 1fr auto;
         gap: 15px;
-        border-bottom: 1px solid #d4ded4;
+        border-bottom: 1px solid var(--line);
       }
       .learning-list > div:first-child {
         padding-top: 0;
@@ -444,7 +445,7 @@
       .learning-list > div > span {
         font-size: 10px;
         font-family: monospace;
-        color: #7a8a7c;
+        color: var(--muted);
         margin-top: 3px;
       }
       .learning-list h3 {
@@ -481,13 +482,13 @@
       .profile-grid > div > p:first-child {
         margin-top: 0;
         font-size: 16px;
-        color: #45544b;
+        color: var(--ink);
         line-height: 1.8;
       }
       .privacy {
         font-size: 12px;
         color: var(--muted);
-        border-left: 2px solid #c7d4ca;
+        border-left: 2px solid var(--accent);
         padding-left: 15px;
         margin-top: 22px;
       }
